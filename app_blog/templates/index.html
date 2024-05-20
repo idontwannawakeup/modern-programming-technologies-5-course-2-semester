@@ -4,36 +4,48 @@
 {% spaceless %}
 
     {% if categories %}
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
         <div class="container">
-            {% for item in categories %}
-            <a href="{{ item.get_absolute_url }}">
-                <h4>{{ item.category }}</h4>
-            </a>
-            {% endfor %}
+            <div class="navbar-nav">
+                {% for item in categories %}
+                <a class="nav-item nav-link accent-color" href="{{ item.get_absolute_url }}">
+                    {{ item.category }}
+                </a>
+                {% endfor %}
+            </div>
         </div>
     </nav>
     {% endif %}
 
     {% if articles %}
-        {% for item in articles %}
-        <div>
-            <a href="{{ item.get_absolute_url }}">
-                <h4>{{ item.title }}</h4>
-            </a>
-            <h5>
-                {{ item.pub_date|date:"j E Y"|safe|linebreaks }}
-            </h5>
-            <p>
-                {{ item.description|safe|escape|striptags|truncatewords_html:32 }}
-            </p>
+    <div class="container mt-4">
+        <div class="row">
+            {% for item in articles %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <a href="{{ item.get_absolute_url }}" class="text-decoration-none accent-color">
+                            <h4 class="card-title">{{ item.title }}</h4>
+                        </a>
+                        <h5 class="card-subtitle mb-2 text-muted">
+                            {{ item.pub_date|date:"j E Y"|safe|linebreaks }}
+                        </h5>
+                        <p class="card-text">
+                            {{ item.description|safe|escape|striptags|truncatewords_html:32 }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+    </div>
     {% endif %}
 
-    <a href="{% url 'articles-list' %}">
-        <h4>Всі публікації</h4>
-    </a>
+    <div class="container text-center mt-4">
+        <a href="{% url 'articles-list' %}" class="btn btn-accent">
+            Всі публікації
+        </a>
+    </div>
 
 {% endspaceless %}
 {% endblock %}

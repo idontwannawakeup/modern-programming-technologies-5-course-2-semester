@@ -1,51 +1,73 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
-
-div > h1 {
-    color: #09b3bf;
-}
-
-body > div > div > ol > li {
-    margin: 0 5px;
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 18px;
-    }
-}
-
 body {
-    background: url('../img/bg.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-color: #181818;
+    color: #e3e3e3;
 }
 
-div > h1 {
+.accent-color {
+    color: #FF0000;
+}
+
+.accent-color:hover {
+    color: #FF4D4D;
+}
+
+.navbar-dark.bg-custom {
+    background-color: #202020;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 1rem;
+}
+
+.breadcrumb {
+    background-color: #202020;
+    border-radius: 0;
+    padding: 0.75rem 1rem;
+}
+
+.breadcrumb a {
+    color: #FF0000;
+}
+
+.breadcrumb a:hover {
+    color: #FF4D4D;
+}
+
+.breadcrumb li + li::before {
+    content: '>';
+    color: #b3b3b3;
+    padding: 0 0.5rem;
+}
+
+.btn-accent {
+    background-color: #FF0000;
+    border-color: #FF0000;
     color: #fff;
-    font-family: 'Ubuntu', sans-serif;
 }
 
-body > div > nav > div > a > h4 {
-    color: #fff;
-    font-family: 'Ubuntu', sans-serif;
+.btn-accent:hover {
+    background-color: #FF4D4D;
+    border-color: #FF4D4D;
 }
 
-.article-block {
-    background: #fff;
-    color: #383838;
-    font-family: 'Ubuntu', sans-serif;
-    box-shadow: 2px 2px 1px #ccc;
-    padding: 10px;
-    margin: 10px;
+.card {
+    background-color: #282828;
 }
 
-.article-block a {
-    color: #383838;
-    font-family: 'Ubuntu', sans-serif;
+.text-muted {
+    color: #b3b3b3 !important;
 }
 
-body > div > div > ol > li {
-    margin: 0 5px;
+.container-image {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+}
+
+.clearfix {
+    clear: both;
 }

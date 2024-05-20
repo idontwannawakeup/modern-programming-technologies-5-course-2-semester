@@ -6,7 +6,7 @@ from django.urls import reverse
 
 class Category(models.Model):
     category = models.CharField(u'Категорія', max_length=250, help_text=u'Максимум 250 символів')
-    slug = models.SlugField(u'Слаг')
+    slug = models.SlugField(u'Слаг', default='')
     objects = models.Manager()
 
     class Meta:
